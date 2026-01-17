@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Реєстрація</h1>
+        <nav>
+            <a href="../index.html">На головну</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form action="#" method="post">
+                <p>
+                    <label for="fullname">Повне ім’я:</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="Введіть Ваше прізвище та ім’я" required>
+                </p>
+
+                <p>
+                    <label for="about">Про себе:</label><br>
+                    <textarea id="about" name="about" rows="4"></textarea>
+                </p>
+
+                <p>
+                    Стать:<br>
+                    <label>
+                        <input type="radio" name="gender" value="female" checked>
+                        Жіноча
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male">
+                        Чоловіча
+                    </label>
+                </p>
+
+                <p>
+                    <label for="specialty">Спеціальність:</label><br>
+                    <select id="specialty" name="specialty">
+                        <option value="compute-science" selected>Комп'ютерні науки</option>
+                        <option value="economy">Економіка</option>
+                        <option value="philology">Філологія</option>
+                        <option value="managment">Менеджмент</option>
+                        <option value="psychology">Психологія</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="birthdate">Дата народження:</label><br>
+                    <input type="date" id="birthdate" name="birthdate">
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" required>
+                        Погоджуюсь з умовами
+                    </label>
+                </p>
+
+                <p>
+                    <button type="submit">Зареєструватися</button>
+                    <button type="reset">Очистити</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
