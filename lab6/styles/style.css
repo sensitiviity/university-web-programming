@@ -30,13 +30,22 @@ html,body{
 }
 
 header#pageHeader{
+    /*display: flex;*/
     background-color: var(--bg-blocks);
+    /*gap: var(--gap);
+    align-items: center;
+    justify-content: space-between;*/
     padding: 28px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
 
+.header-left{
+    /*display: flex;
+    gap: 16px;
+    align-items: center;*/
+}
 .author-name{
     margin: 0;
     font-size: 1.4rem;
@@ -58,9 +67,9 @@ header img{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-#authNavigation li{
-    padding-top: 20px;
+    /*display: flex;
+    gap: 10px;
+    align-items: center;*/
 }
 #authNavigation a{
     color: #222;
@@ -88,6 +97,7 @@ header img{
 }
 #mainNavigation ul{
     list-style: none;
+    /*display: flex;*/
     padding: 0;
     margin: 0;
 }
@@ -102,19 +112,27 @@ header img{
 }
 
 main#mainContent{
+    /*display: grid;
+    gap: 24px;*/
     margin-top: 22px;
 }
 
 #about, #films {
     background-color: var(--bg-blocks);
     padding: 18px;
-    margin-bottom: 22px;
     border-radius: 12px;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
+#films h2{
+    /*display: flex;
+    justify-content: center;*/
+}
 
 .film-card{
+    /*display: flex;
+    align-items: center;
+    gap: 14px;*/
     background: linear-gradient(180deg, #f4e9fe, #ebe3f2);
     padding: 14px;
     border-radius: 10px; 
@@ -129,7 +147,7 @@ main#mainContent{
 }
 
 aside#additionalInfo{
-    padding: 8px 18px;
+    padding: 18px;
     display: block;
 }
 
@@ -212,3 +230,9 @@ footer#pageFooter{
     vertical-align: middle;
 }
 
+@media (max-width: 930px){
+    header#pageHeader{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
