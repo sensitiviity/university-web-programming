@@ -1,41 +1,57 @@
 body {
-  font-family: system-ui, sans-serif;
-  background: #f9fafb;
-  margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f9fafb;
+    margin: 0;
 }
 
 header {
-  background: #E7AAFA;
-  color: #222;
-  padding: 1rem;
+    background: #E7AAFA;
+    color: #222;
+    padding: 1rem;
 }
 
 h1 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+   font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
 .post {
-  background: #fff;
-  margin: 1rem 2rem;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    background: #fff;
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
 }
 
 .post h2 {
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
 .meta {
-  font-size: 0.9rem;
-  color: #222;
+    font-size: 0.9rem;
+    color: #222;
 }
 
 .toolbar {
-  display: flex;
-  gap: 0.7rem;
-  padding: 1rem;
-  margin: 0rem 1rem;
+    display: flex;
+    gap: 0.7rem;
+    padding: 1rem;
+    margin: 0rem 1rem;
+}
+
+.toolbar .btn {
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #e9d7f6;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toolbar .btn[aria-pressed="true"] {
+    background: #E7AAFA;
+    color: #ffffff;
 }
 
 button {
