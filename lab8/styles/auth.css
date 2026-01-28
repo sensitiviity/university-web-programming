@@ -1,0 +1,19 @@
+.error { 
+    color: red; 
+    font-size: 0.9em; 
+    margin-top: 4px; 
+}
+
+input.valid { 
+    border: 1px solid green; 
+}
+
+input.invalid { 
+    border: 1px solid red; 
+}
+
+.welcome { 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    margin-top: 20px; 
+}
