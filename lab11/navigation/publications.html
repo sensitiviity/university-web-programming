@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Навчальні нотатки</title>
+    <link rel="stylesheet" href="/lab11/styles/pubs.css">
+</head>
+<body>
+
+    <header>
+        <h1>Навчальні нотатки з веброзробки</h1>
+    </header>
+
+    <main>
+        <section id="createPost">
+            <h2>Додати новий пост</h2>
+            <form id="postForm">
+                <input type="text" id="postTitle" placeholder="Заголовок" required>
+                <textarea id="postContent" placeholder="Текст поста" required></textarea>
+                <button type="submit">Додати</button>
+            </form>
+        </section>
+
+        <section>
+            <button id="clearBtn">Очистити пости</button>
+            <p>Кількість постів: <span id="counter">0</span></p>
+            <h2>Список постів</h2>
+            <div id="postsContainer"></div>
+            
+        </section>
+    </main>
+
+    <script src="/lab11/dist/main.js" type="module"></script>
+</body>
+</html>
