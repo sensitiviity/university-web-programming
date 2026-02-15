@@ -1,50 +1,53 @@
-const form = document.getElementById("postForm");
-const titleInput = document.getElementById("postTitle");
-const contentInput = document.getElementById("postContent");
-const postsContainer = document.getElementById("postsContainer");
-const clearBtn = document.getElementById("clearBtn");
-const counter = document.getElementById("counter");
-if (!form || !titleInput || !contentInput || !postsContainer || !clearBtn || !counter) {
-    throw new Error("DOM elements not found");
-}
-export function renderPost(post) {
+const postsContainer = document.getElementById("posts");
+const counterElem = document.getElementById("counter");
+const openFormBtn = document.getElementById("openFormBtn");
+const formSection = document.getElementById("postFormSection");
+const addBtn = document.getElementById("addPost");
+const clearBtn = document.getElementById("clearPosts");
+const titleInput = document.getElementById("titleInput");
+const bodyInput = document.getElementById("bodyInput");
+let posts = [];
+function renderPost(post) {
     const postElement = document.createElement("div");
     postElement.className = "post";
     postElement.dataset.id = post.id.toString();
     const title = document.createElement("h3");
     title.textContent = post.title;
-    const content = document.createElement("p");
-    content.textContent = post.content;
+    const body = document.createElement("p");
+    body.textContent = post.body;
     const date = document.createElement("small");
     date.textContent = post.createdAt.toLocaleString();
-    postElement.appendChild(title);
-    postElement.appendChild(content);
-    postElement.appendChild(date);
+    postElement.append(title, body, date);
     return postElement;
 }
-export function clearPosts() {
+function clearPosts() {
     postsContainer.innerHTML = "";
+    posts = [];
     updateCounter();
 }
-export function updateCounter() {
+function updateCounter() {
     const count = postsContainer.children.length;
-    counter.textContent = count.toString();
+    counterElem.textContent = `Усього постів: ${count}`;
 }
-form.addEventListener("submit", (event) => {
+function toggleForm() {
+    formSection.hidden = !formSection.hidden;
+}
+addBtn.addEventListener("click", (event) => {
     event.preventDefault();
     const newPost = {
         id: Date.now(),
         title: titleInput.value.trim(),
-        content: contentInput.value.trim(),
+        body: bodyInput.value.trim(),
         createdAt: new Date()
     };
-    if (!newPost.title || !newPost.content)
+    if (!newPost.title || !newPost.body)
         return;
     const postElement = renderPost(newPost);
     postsContainer.appendChild(postElement);
     updateCounter();
-    form.reset();
+    titleInput.value = "";
+    bodyInput.value = "";
 });
-clearBtn.addEventListener("click", () => {
-    clearPosts();
-});
+openFormBtn.addEventListener("click", (e) => toggleForm());
+clearBtn.addEventListener("click", (e) => clearPosts());
+export {};

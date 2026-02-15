@@ -1,17 +1,17 @@
-import { Post } from "./types";
+import { Post } from "./types.js";
 
-const form = document.getElementById("postForm") as HTMLFormElement;
-const titleInput = document.getElementById("postTitle") as HTMLInputElement;
-const contentInput = document.getElementById("postContent") as HTMLTextAreaElement;
-const postsContainer = document.getElementById("postsContainer") as HTMLDivElement;
-const clearBtn = document.getElementById("clearBtn") as HTMLButtonElement;
-const counter = document.getElementById("counter") as HTMLSpanElement;
+const postsContainer = document.getElementById("posts") as HTMLDivElement;
+const counterElem = document.getElementById("counter") as HTMLParagraphElement;
+const openFormBtn = document.getElementById("openFormBtn") as HTMLButtonElement;
+const formSection = document.getElementById("postFormSection") as HTMLElement;
+const addBtn = document.getElementById("addPost") as HTMLButtonElement;
+const clearBtn = document.getElementById("clearPosts") as HTMLButtonElement;
+const titleInput = document.getElementById("titleInput") as HTMLInputElement;
+const bodyInput = document.getElementById("bodyInput") as HTMLTextAreaElement;
 
-if (!form || !titleInput || !contentInput || !postsContainer || !clearBtn || !counter) {
-    throw new Error("DOM elements not found");
-}
+let posts: Post[] = [];
 
-export function renderPost(post: Post): HTMLElement {
+function renderPost(post: Post): HTMLElement {
     const postElement = document.createElement("div");
     postElement.className = "post";
 
@@ -20,49 +20,56 @@ export function renderPost(post: Post): HTMLElement {
     const title = document.createElement("h3");
     title.textContent = post.title;
 
-    const content = document.createElement("p");
-    content.textContent = post.content;
+    const body = document.createElement("p");
+    body.textContent = post.body;
 
     const date = document.createElement("small");
     date.textContent = post.createdAt.toLocaleString();
 
-    postElement.appendChild(title);
-    postElement.appendChild(content);
-    postElement.appendChild(date);
+    postElement.append(title, body, date);
 
     return postElement;
 }
 
-export function clearPosts(): void {
+function clearPosts(): void {
     postsContainer.innerHTML = "";
+    posts = [];
     updateCounter();
 }
 
-export function updateCounter(): void {
+function updateCounter(): void {
     const count = postsContainer.children.length;
-    counter.textContent = count.toString();
+    counterElem.textContent = `Усього постів: ${count}`;
 }
 
-form.addEventListener("submit", (event: Event) => {
+function toggleForm(): void {
+    formSection.hidden = !formSection.hidden;
+}
+
+addBtn.addEventListener("click", (event: MouseEvent) => {
     event.preventDefault();
 
     const newPost: Post = {
         id: Date.now(),
         title: titleInput.value.trim(),
-        content: contentInput.value.trim(),
+        body: bodyInput.value.trim(),
         createdAt: new Date()
     };
 
-    if(!newPost.title || !newPost.content) return;
+    if(!newPost.title || !newPost.body) return;
 
     const postElement = renderPost(newPost);
     postsContainer.appendChild(postElement);
 
     updateCounter();
-    form.reset();
+    titleInput.value = "";
+    bodyInput.value = "";
 }); 
 
-clearBtn.addEventListener("click", () => {
-    clearPosts();
-});
+openFormBtn.addEventListener("click", (e: MouseEvent) => toggleForm());
+
+clearBtn.addEventListener("click", (e: MouseEvent) => clearPosts());
+
+
+
 

@@ -12,24 +12,27 @@
         <h1>Навчальні нотатки з веброзробки</h1>
     </header>
 
-    <main>
-        <section id="createPost">
-            <h2>Додати новий пост</h2>
-            <form id="postForm">
-                <input type="text" id="postTitle" placeholder="Заголовок" required>
-                <textarea id="postContent" placeholder="Текст поста" required></textarea>
-                <button type="submit">Додати</button>
-            </form>
-        </section>
+    <div class="toolbar" id="toolbar">
+        <button class="btn" id="btnAll">Усі</button>
+        <button class="btn" id="openFormBtn">Новий пост</button>
+        <span style="margin-left:auto"></span>
+    </div>
 
-        <section>
-            <button id="clearBtn">Очистити пости</button>
-            <p>Кількість постів: <span id="counter">0</span></p>
-            <h2>Список постів</h2>
-            <div id="postsContainer"></div>
-            
-        </section>
-    </main>
+    <section id="postFormSection" hidden>
+        <h2>Новий пост</h2>
+        <form>
+            <input id="titleInput" type="text" placeholder="Заголовок">
+            <textarea id="bodyInput" placeholder="Текст"></textarea>
+
+            <button id="addPost">Додати пост</button>
+        </form>
+    </section>
+
+    <section id="allPostsSection">
+        <p id="counter">Усього постів: 0</p>
+        <button id="clearPosts">Очистити пости</button>
+        <div id="posts"></div>
+    </section>
 
     <script src="/lab11/dist/main.js" type="module"></script>
 </body>
