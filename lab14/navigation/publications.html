@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Навчальні нотатки</title>
+    <link rel="stylesheet" href="/lab14/styles/pubs.css">
+</head>
+<body>
+
+    <header>
+        <h1>Навчальні нотатки з веброзробки</h1>
+    </header>
+
+    <div class="toolbar" id="toolbar">
+        <button class="btn" id="btnAll">Усі</button>
+        <button class="btn" id="openFormBtn">Новий пост</button>
+        <span style="margin-left:auto"></span>
+    </div>
+
+    <section id="postFormSection" hidden>
+        <h2>Новий пост</h2>
+        <form>
+            <input id="titleInput" type="text" placeholder="Заголовок">
+            <textarea id="bodyInput" placeholder="Текст"></textarea>
+
+            <button id="addPost">Додати пост</button>
+        </form>
+    </section>
+
+    <section id="allPostsSection">
+        <p id="counter">Усього постів: 0</p>
+        <button id="clearPosts">Очистити пости</button>
+        <div id="posts"></div>
+    </section>
+
+    <script src="/lab14/dist/main.js" type="module"></script>
+</body>
+</html>

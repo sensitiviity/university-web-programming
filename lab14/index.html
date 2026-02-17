@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Персональна сторінка студента — Охріменко Валерія</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <a href="#mainContent" class="skip-link">Перейти до основного вмісту</a>
+    <div class="container">
+        <header id="pageHeader">
+            <div class="header-left">
+                <img src="assets/profile.jpg" alt="Портрет Охріменко Валерії" title="Фото автора" fetchpriority="high" width="200" height="200">
+                <div>
+                    <h1 class="author-name">Охріменко Валерія</h1>
+                    <p class="author-description">Студентка факультету комп'ютерних наук. Цікавлюсь веброзробкою.</p>
+                </div>
+            </div>
+
+            <nav id="authNavigation" aria-label="Авторизація">
+                <ul>
+                    <li><a href="auth/login.html">Вхід</a></li>
+                    <li><a href="auth/registration.html">Реєстрація</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav id="mainNavigation" aria-label="Головна навігація">
+            <ul>
+                <li><a href="#about">Про мене</a></li>
+                <li><a href="#hobbies">Хобі</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+                <li><a href="navigation/publications.html">Нотатки</a></li>
+            </ul>
+        </nav>
+
+        <main id="mainContent">
+            <article id="about">
+                <h2>Про мене</h2>
+                <p>Я навчаюсь на спеціальності, пов’язаній з інформаційними технологіями. Основний напрям моїх інтересів - веброзробка та фронтенд-технології.</p>
+            </article>
+
+            <section id="films">
+                <h2>Мої улюблені фільми</h2>
+
+                <div class="film-card">
+                    <img src="assets/interstellar.jpg" srcset="assets/interstellar-400.jpg 400w, assets/interstellar-800.jpg 800w, assets/interstellar-1200.jpg 1200w" sizes="(max-width: 600px) 22vw, 120px, (max-width: 1024px) 12vw, 120px" alt="Постер Інтерстеллар" title="Інтерстеллар" loading="lazy">
+                    <div>
+                        <h3>Інтерстеллар</h3>
+                        <p class="meta">Фільм про команду астронавтів, які через космічну червоточину вирушають у далеку подорож, щоб знайти новий дім для людства.</p>
+                    </div>
+                </div>
+
+                <div class="film-card" style="margin-top:12px;">
+                    <img src="assets/memento.jpg" srcset="assets/memento-400.jpg 400w, assets/memento-800.jpg 800w, assets/memento-1200.jpg 1200w" sizes="(max-width: 600px) 22vw, 120px, (max-width: 1024px) 12vw, 120px" alt="Постер Мементо" title="Мементо" loading="lazy">
+                    <div>
+                        <h3>Мементо</h3>
+                        <p class="meta">Історія чоловіка з короткочасною втратою пам'яті, що використовує нотатки й татуювання, щоб знайти правду.</p>
+                    </div>
+                </div>
+
+                <div class="film-card" style="margin-top:12px;">
+                    <img src="assets/atonement.jpg" srcset="assets/atonement-400.jpg 400w, assets/atonement-800.jpg 800w, assets/atonement-1200.jpg 1200w" sizes="(max-width: 600px) 22vw, 120px, (max-width: 1024px) 12vw, 120px" alt="Постер Спокути" title="Спокута" loading="lazy">
+                    <div>
+                        <h3>Спокута</h3>
+                        <p class="meta">Драма про помилкове звинувачення та спроби спокути, що руйнують кохання двох людей.</p>
+                    </div>
+                </div>
+            </section>
+
+            <aside id="additionalInfo">
+                <h2>Цікаві факти</h2>
+                <p>Я тільки починаю свій шлях у веброзробці, але мені подобається вивчати нові технології та бачити результат своєї роботи.</p>
+                <ul>
+                    <li><a href="https://github.com/sensitiviity" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </aside>
+
+        </main>
+
+        <footer id="pageFooter">
+            <p>Email: <a href="mailto:valeriaokh@gmail.com">valeriaokh@gmail.com</a></p>
+            <p>© 2026. Усі права захищені.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
